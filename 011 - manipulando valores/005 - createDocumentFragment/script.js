@@ -1,0 +1,19 @@
+"use strict";
+
+/*dom[principal]
+fragmentDom [secundario fora do dom principal]*/
+
+const ul = document.querySelector("ul");
+const fragment = document.createDocumentFragment();
+
+const lanches = ["lanche 1", "lanche 2", "lanche 3", "lanche 4"];
+
+lanches.forEach((element) => {
+    const li = document.createElement("li");
+    li.textContent = element;
+    //ul.append(li);
+    fragment.append(li)
+});
+
+console.log(fragment);
+ul.append(fragment); //adiciona os itens do fragment
